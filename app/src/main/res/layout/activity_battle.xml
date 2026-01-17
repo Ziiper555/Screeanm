@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp"
+    tools:context=".BattleActivity">
+
+    <!-- Boss Section -->
+    <TextView
+        android:id="@+id/tvBossName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shhhark"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <ProgressBar
+        android:id="@+id/pbBossHealth"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:progress="100"
+        android:progressTint="#FF0000"
+        app:layout_constraintTop_toBottomOf="@id/tvBossName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <ImageView
+        android:id="@+id/ivBoss"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@android:drawable/ic_menu_help"
+        app:layout_constraintTop_toBottomOf="@id/pbBossHealth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        tools:ignore="ContentDescription" />
+
+    <!-- Battle Box (Undertale Style) -->
+    <FrameLayout
+        android:id="@+id/battleBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/border_white"
+        app:layout_constraintTop_toBottomOf="@id/ivBoss"
+        app:layout_constraintBottom_toTopOf="@id/joystickBase"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7">
+
+        <!-- Player Character Placeholder -->
+        <ImageView
+            android:id="@+id/ivPlayer"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            android:tint="#FF0000"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+
+    <!-- Joystick Controls -->
+    <View
+        android:id="@+id/joystickBase"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        android:background="@android:drawable/presence_invisible"
+        android:backgroundTint="#44FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/joystickKnob"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:drawable/presence_online"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/joystickBase"
+        app:layout_constraintEnd_toEndOf="@id/joystickBase"
+        app:layout_constraintStart_toStartOf="@id/joystickBase"
+        app:layout_constraintTop_toTopOf="@id/joystickBase" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

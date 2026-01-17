@@ -1,6 +1,8 @@
 package com.example.screeanm;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button btnJugar = findViewById(R.id.btnJugar);
+        btnJugar.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, BossSelectionActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnSalir = findViewById(R.id.btnSalir);
+        btnSalir.setOnClickListener(v -> finish());
     }
 }

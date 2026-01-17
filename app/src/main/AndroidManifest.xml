@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Screeanm">
         <activity
+            android:name=".BattleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BossSelectionActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
