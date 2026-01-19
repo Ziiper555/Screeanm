@@ -2,10 +2,10 @@ package com.example.screeanm;
 
 public abstract class Boss {
     protected String name;
-    protected int maxHealth;
-    protected int currentHealth;
+    protected float maxHealth;
+    protected float currentHealth;
 
-    public Boss(String name, int maxHealth) {
+    public Boss(String name, float maxHealth) {
         this.name = name;
         this.maxHealth = maxHealth;
         this.currentHealth = maxHealth;
@@ -15,15 +15,15 @@ public abstract class Boss {
         return name;
     }
 
-    public int getMaxHealth() {
+    public float getMaxHealth() {
         return maxHealth;
     }
 
-    public int getCurrentHealth() {
+    public float getCurrentHealth() {
         return currentHealth;
     }
 
-    public void takeDamage(int damage) {
+    public void takeDamage(float damage) {
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
     }

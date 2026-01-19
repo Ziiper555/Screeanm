@@ -8,6 +8,6 @@ public class Shhhark extends Boss {
 
     @Override
     public void update() {
-        // Lógica específica de ataque de Shhhark
+
     }
 }
